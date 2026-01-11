@@ -707,34 +707,41 @@ npm install -D \
 ## 迁移现状检查 (2026-01-11)
 
 ### Phase 1: 基础设施 - **已完成**
+
 - [x] **Astro 5.x**: 核心框架已升级到最新稳定版。
 - [x] **SSR 支持**: `astro.config.mjs` 设置为 `output: 'server'`，支持动态预览和分析。
 - [x] **别名配置**: Vite 别名 `~` 指向 `/src` 已配置。
 - [x] **集成**: `solidjs`, `tailwind`, `mdx` 集成已正确配置。
 
 ### Phase 2: 国际化 (i18n) - **已完成**
+
 - [x] **实现方案**: 自定义 `src/i18n.ts` 结合 `i18next` 实现，支持服务端和客户端同构。
 - [x] **语言包**: 完整的 `zh-cn.json` 和 `en.json`。
 - [x] **原生路由**: 使用 Astro 的 `i18n` 路由配置，自动处理 `/[lang]/`。
 
 ### Phase 3 & 4: 页面与路由迁移 - **已完成**
+
 - [x] **核心页面**: `index`, `cdn`, `analyze`, `online-split`, `showcase`, `article` 已全部迁移至 Astro 页面。
 - [x] **字体详情页**: `/fonts/[font]/[name].astro` 深度优化，大部分组件转换为 Astro 以提升性能。
 - [x] **Islands**: 交互组件（如 `SearchBox`, `WASMSplit`, `TextWriter`）按需使用 `client:*` 指令。
 
 ### Phase 5: 静态资源处理 - **已完成**
+
 - [x] **CDN 引用**: 全局使用 `__CDN__` 变量引用外部资源，减少站点体积。
 
 ### Phase 6: 样式迁移 - **已完成**
+
 - [x] **Tailwind**: 全面采用 Tailwind CSS。
 - [x] **Less 移除**: 已彻底移除所有 `.less` 文件，改为原子化 CSS 或 `.css`。
 
 ### Phase 7: 关键功能模块 - **已完成**
+
 - [x] **MDX 增强**: 配置了 `remarkMdxToc`, `remarkFrontmatter`, `remarkMdxFrontmatter`, `remarkHeadId`, `Prism` 等插件。
 - [x] **ECharts**: 封装了 `ECharts.tsx` 通用组件，支持服务端和客户端渲染。
 - [x] **WASM**: 字体分割 WASM 模块在 Astro 环境下运行正常。
 
 ### 验收结果: **全部通过**
+
 项目已成功迁移至 Astro 架构，性能和开发体验均得到显著提升。
 
 ---
